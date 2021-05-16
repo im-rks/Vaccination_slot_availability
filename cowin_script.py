@@ -50,8 +50,4 @@ else:
     with smtplib.SMTP(host='smtp.gmail.com', port='587') as server:
         server.starttls()
         server.login(username, config.password)
-        server.send_message(email_msg, username, to_user)
-
-    with open('timestamp.txt','a+') as file:
-    	file.write(str(datetime.now()))
-    	file.write('\n')    
+        server.send_message(email_msg, username, to_user) 
